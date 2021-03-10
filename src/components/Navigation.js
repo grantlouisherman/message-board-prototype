@@ -1,6 +1,5 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 const renderNavLinks = (channels) => {
   return Object.keys(channels).map((channel) =>
@@ -9,9 +8,7 @@ const renderNavLinks = (channels) => {
 
 const Navigation = ({ channels, setActiveChannel }) => {
   return (
-    <Navbar bg="light" expand="lg" onClick={(evt) => {
-      setActiveChannel(evt.target.innerText)
-    }}>
+    <Navbar bg="light" expand="lg" onClick={setActiveChannel}>
       <Navbar.Brand href="#home">Channels</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

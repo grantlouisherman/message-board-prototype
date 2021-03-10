@@ -5,14 +5,24 @@ import MessageContainer from './components/MessageContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import mockData from "./mock_channels.json";
 function App() {
-  const [ activeChannel, setActiveChannel ] = useState('');
+  const [ messages, updateMessages ] = useState('');
+
+  const handleNewPostSubmission = comment => {
+    updateMessages([comment, ...messages]);
+  }
+  const handleActiveSectionUpdate = e => {
+    updateMessages(mockData[e.target.innerText]);
+  }
   return (
     <>
       <Navigation
         channels={mockData}
-        setActiveChannel={setActiveChannel}
+        setActiveChannel={handleActiveSectionUpdate}
       />
-      <MessageContainer messages={mockData[activeChannel]} />
+      <MessageContainer
+        messages={messages}
+        handleNewPostSubmission={handleNewPostSubmission}
+      />
     </>
   );
 }

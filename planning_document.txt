@@ -1,0 +1,33 @@
+Requirements:
+three panels: Navigation, Message, Editor
+
+Navigation:
+Shows a list of channels
+Clicking a channel in navigation panel selects that channel
+
+Message list panel shows a list of message bodies
+
+Editor:
+Entering text in editor and clicking submit adds message to the currently selected channel
+Submitting editor clears input
+Switching channels clears input
+Submit button should be disable w/ no message
+
+Data structure: {
+  CHANNEL: [ MESSAGE, MESSAGE, MESSAGE ]
+
+}
+
+
+<>
+loadData(() => GET /channels )
+[ activeChannel, setActiveChannel ]
+Need a way to retrigger rerender ???
+// Client application state contains channels and their content
+<Navigation setActiveChannel> GET /channels
+activeChannel && Message Presentation Component
+  <Editor> SUBMIT ( POST /channel/:id )
+</Messages>
+
+
+</>

@@ -11,7 +11,7 @@ const NewPostForm = ({ handleNewPostSubmission }) => {
       handleNewPostSubmission(comment);
       updateComment('');
     }} >
-      <Form.Group controlId="exampleForm.ControlTextarea1">
+      <Form.Group controlId="Form.ControlTextarea1">
         <Form.Label>Add Comment</Form.Label>
         <Form.Control as="textarea" value={comment} onChange={handleTextAreaChange} />
       </Form.Group>

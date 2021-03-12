@@ -15,7 +15,7 @@ const NewPostForm = ({ handleNewPostSubmission }) => {
         <Form.Label>Add Comment</Form.Label>
         <Form.Control as="textarea" value={comment} onChange={handleTextAreaChange} />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" disabled={comment.length ? false : true}>
         Submit
       </Button>
     </Form>

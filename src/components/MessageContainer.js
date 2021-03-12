@@ -4,7 +4,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import NewPostForm from "./NewPostForm";
 
 const renderMessages = (messages) => {
-  return messages.map((message) => <ListGroup.Item>{message}</ListGroup.Item>);
+  return Array.isArray(messages) && messages.map((message) => <ListGroup.Item>{message}</ListGroup.Item>);
 };
 
 const renderNoMessagesComponent = () => (
@@ -14,8 +14,8 @@ const renderNoMessagesComponent = () => (
     </Jumbotron>
   </ListGroup>
 );
-const MessageContainer = ({ messages, handleNewPostSubmission }) => {
-  useEffect(() => {}, [messages]);
+const MessageContainer = ({ messages, handleNewPostSubmission, activeChannel }) => {
+  useEffect(() => {}, [messages, activeChannel]);
   if (!messages) return renderNoMessagesComponent();
   return (
     <>
